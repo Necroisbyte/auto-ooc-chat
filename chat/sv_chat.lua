@@ -12,10 +12,10 @@ AddEventHandler('_chat:messageEntered', function(author, color, message)
         return
     end
 
-   TriggerEvent('chatMessage', source, author, message)
+   TriggerEvent('chatMessage', source, '^3 OOC| ' .. author, message)
 
     if not WasEventCanceled() then
-        TriggerClientEvent('oocMessage',  -1, author,  { 255, 255, 255 }, message)
+        TriggerClientEvent('chatMessage',  -1, author,  { 255, 255, 255 }, message)
     end
 
 end)
